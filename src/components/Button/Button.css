@@ -1,4 +1,6 @@
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -18,6 +20,25 @@
     border-color var(--duration-fast) var(--ease-out),
     color var(--duration-fast) var(--ease-out),
     transform var(--duration-fast) var(--ease-out);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -45%;
+  width: 35%;
+  height: 220%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: rotate(18deg) translateX(-220%);
+  transition: transform 700ms var(--ease-out);
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .btn:hover::after {
+    transform: rotate(18deg) translateX(520%);
+  }
 }
 
 .btn--primary {

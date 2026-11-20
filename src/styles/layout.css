@@ -1,5 +1,10 @@
 .app-shell {
+  --sidebar-width-local: var(--sidebar-width);
   min-height: 100vh;
+}
+
+.app-shell.is-sidebar-collapsed {
+  --sidebar-width-local: 84px;
 }
 
 .topbar {
@@ -12,20 +17,42 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: var(--sidebar-width);
+  width: var(--sidebar-width-local);
   height: 100vh;
   height: 100dvh;
-  transition: transform var(--duration-medium) var(--ease-out);
+  transition:
+    transform var(--duration-medium) var(--ease-out),
+    width var(--duration-medium) var(--ease-out);
 }
 
 .main-content {
+  --pointer-x: 70%;
+  --pointer-y: 20%;
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
-  margin-left: var(--sidebar-width);
+  margin-left: var(--sidebar-width-local);
   padding: var(--page-padding-block) var(--page-padding-inline) var(--space-8);
   background:
     radial-gradient(ellipse 70% 42% at 100% -8%, rgba(49, 197, 232, 0.07), transparent 52%),
     radial-gradient(ellipse 46% 36% at 0% 100%, rgba(139, 124, 255, 0.05), transparent 58%),
     var(--color-bg-primary);
+  transition: margin-left var(--duration-medium) var(--ease-out);
+}
+
+.main-content::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  left: var(--pointer-x);
+  top: var(--pointer-y);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(49, 197, 232, 0.065), transparent 68%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: left 120ms linear, top 120ms linear;
 }
 
 .main-content:focus {

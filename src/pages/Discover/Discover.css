@@ -1,0 +1,6 @@
+.discover-page {
+  display: grid;
+  gap: var(--space-6);
+  min-height: calc(100vh - var(--page-padding-block) * 2);
+  padding-block: var(--space-6);
+}

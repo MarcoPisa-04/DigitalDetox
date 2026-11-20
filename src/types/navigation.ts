@@ -7,6 +7,8 @@ export type NavId =
   | 'experience'
   | 'wellness'
   | 'reflection'
+  | 'team'
+  | 'survey'
   | 'project';
 
 export type NavStatus = 'available' | 'in-development';

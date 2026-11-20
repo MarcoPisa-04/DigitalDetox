@@ -11,7 +11,6 @@ function createAvailableItem(item: Extract<NavItemConfig, { status: 'available' 
   const link = document.createElement('a');
   link.className = 'nav-item';
   link.href = item.href;
-  link.lang = 'en';
   link.dataset.nav = 'available';
   if (active) {
     link.classList.add('is-active');
@@ -33,7 +32,6 @@ function createUpcomingItem(
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'nav-item is-upcoming';
-  button.lang = 'en';
   button.dataset.nav = 'upcoming';
   button.setAttribute('aria-disabled', 'true');
   button.setAttribute('aria-label', `${item.label}, sezione in sviluppo`);

@@ -74,12 +74,89 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .project__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .survey__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .survey__qr-panel {
+    min-height: 480px;
+  }
+
+  .habits__list {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-list,
+  .wellness-tools {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy,
+  .strategy:last-child {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .strategy:last-child {
+    grid-column: 1;
+  }
+
+  .habits__card,
+  .habits__card:last-child {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .experience__list,
+  .reflection__list {
+    grid-template-columns: 1fr;
+  }
+
+  .data-chart__row {
+    grid-template-columns: 80px minmax(100px, 1fr);
+  }
+
+  .data-chart__text {
+    grid-column: 1 / -1;
+  }
+
+  .mechanism {
+    grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.72fr);
+    gap: var(--space-4);
+  }
+
+  .mechanism__header {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: var(--space-4);
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mechanism__details {
+    grid-column: 2;
+  }
+
+  .mechanism__media {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .mechanism__sources {
+    grid-column: 1 / -1;
+  }
+
   .signal {
     max-width: 460px;
   }
 }
 
 @media (max-width: 767px) {
+  .sidebar__collapse {
+    display: none;
+  }
   :root {
     --page-padding-block: 28px;
     --page-padding-inline: 20px;
@@ -146,6 +223,96 @@
   .pillar-list,
   .team {
     grid-template-columns: 1fr;
+  }
+
+  .project__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .survey__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .survey__qr-panel {
+    min-height: 0;
+    padding: var(--space-4);
+  }
+
+  .survey__qr {
+    border-width: 10px;
+  }
+
+  .habits__list,
+  .habits__comment {
+    grid-template-columns: 1fr;
+  }
+
+  .habits__card,
+  .habits__card:last-child {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .strategy,
+  .strategy:last-child {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .strategy__media,
+  .strategy:last-child .strategy__media {
+    min-height: 180px;
+  }
+
+  .habits__media,
+  .habits__card:last-child .habits__media {
+    min-height: 180px;
+  }
+
+  .experience__list,
+  .reflection__list {
+    grid-template-columns: 1fr;
+  }
+
+  .data-chart {
+    padding: var(--space-4);
+  }
+
+  .data-chart__row {
+    grid-template-columns: 72px minmax(100px, 1fr);
+  }
+
+  .mechanism__header,
+  .mechanism__media,
+  .mechanism__details,
+  .mechanism__sources {
+    grid-column: 1;
+  }
+
+  .mechanism__media {
+    grid-row: auto;
+    min-height: 220px;
+  }
+
+  .mechanism {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .mechanism__header {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: var(--space-4);
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mechanism__details {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanism__sources {
+    grid-column: 1;
   }
 
   .hero__actions {

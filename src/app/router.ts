@@ -1,6 +1,19 @@
 import { HOME_HASH, navigationItems } from './navigation';
 
-const PAGE_ANCHORS = new Set(['contenuto', 'percorso', 'progetto', 'gruppo']);
+const PAGE_ANCHORS = new Set([
+  'contenuto',
+  'abitudini',
+  'percorso',
+  'meccanismi',
+  'questionario',
+  'benessere',
+  'dati',
+  'simulatore',
+  'esperienza',
+  'riflessione',
+  'progetto',
+  'gruppo',
+]);
 
 function normalizeHash(hash: string): string {
   return hash.replace(/^#/, '');

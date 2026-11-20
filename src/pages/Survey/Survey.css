@@ -1,0 +1,101 @@
+.survey-page {
+  display: grid;
+  gap: var(--space-6);
+  min-height: calc(100vh - var(--page-padding-block) * 2);
+  padding-block: var(--space-6);
+}
+
+.survey__grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(280px, 0.65fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.survey__qr-panel {
+  display: grid;
+  place-items: center;
+  min-height: 560px;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(49, 197, 232, 0.08), transparent 55%),
+    var(--color-surface);
+}
+
+.survey__qr-panel::before {
+  content: '';
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border: 1px solid rgba(49, 197, 232, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 80px rgba(49, 197, 232, 0.05),
+    inset 0 0 80px rgba(49, 197, 232, 0.03);
+  pointer-events: none;
+  animation: qr-orbit 12s linear infinite;
+}
+
+.survey__qr-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.survey__qr {
+  position: relative;
+  z-index: 1;
+  animation: qr-breathe 4.8s var(--ease-out) infinite;
+}
+
+@keyframes qr-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.012);
+  }
+}
+
+@keyframes qr-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.survey__qr {
+  width: min(100%, 520px);
+  height: auto;
+  border: 18px solid #ffffff;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+}
+
+.survey__copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  max-width: 38rem;
+}
+
+.survey__kicker {
+  color: var(--color-accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.survey__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.survey__text {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}

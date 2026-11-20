@@ -57,6 +57,29 @@ body.nav-open {
   flex: none;
 }
 
+@media (hover: hover) {
+  .main-content article {
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-medium) var(--ease-out),
+      transform var(--duration-medium) var(--ease-out);
+  }
+
+  .main-content article:hover {
+    border-color: var(--color-border-strong);
+    box-shadow:
+      0 18px 48px rgba(0, 0, 0, 0.16),
+      0 0 34px rgba(49, 197, 232, 0.025);
+  }
+
+  .home article:hover,
+  .survey-page article:hover,
+  .reflection-page article:hover {
+    transform: none;
+  }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

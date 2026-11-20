@@ -210,7 +210,7 @@ export function createSignalField(): HTMLElement {
     'font-size': '12',
     'letter-spacing': '1.5',
   });
-  captionMark.textContent = 'FIG. 01  /  SCREEN — SELF';
+  captionMark.textContent = 'FIG. 01  /  SCHERMO — SÉ';
 
   graphic.append(grid, orbits, links, nodes, screen, scan, person, traveler, captionMark);
 

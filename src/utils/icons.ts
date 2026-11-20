@@ -1,6 +1,7 @@
 import {
   Brain,
   ChartColumn,
+  ClipboardCheck,
   Compass,
   FlaskConical,
   House,
@@ -8,6 +9,7 @@ import {
   Library,
   MessageCircle,
   Sparkles,
+  Users,
   createElement,
 } from 'lucide';
 import type { NavId } from '../types/navigation';
@@ -44,6 +46,10 @@ export function iconForNav(id: NavId): IconNode {
       return Leaf;
     case 'reflection':
       return MessageCircle;
+    case 'team':
+      return Users;
+    case 'survey':
+      return ClipboardCheck;
     case 'project':
       return Library;
     default: {

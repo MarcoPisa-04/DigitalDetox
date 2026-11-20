@@ -7,6 +7,8 @@ import './Sidebar.css';
 export interface SidebarOptions {
   items: readonly NavItemConfig[];
   activeId: NavItemConfig['id'];
+  collapsed: boolean;
+  onToggle: () => void;
 }
 
 export function createSidebar(options: SidebarOptions): HTMLElement {
@@ -30,7 +32,22 @@ export function createSidebar(options: SidebarOptions): HTMLElement {
   version.className = 'sidebar__footer-text';
   version.textContent = `v${APP_VERSION} · ${APP_SPRINT}`;
 
-  footer.append(version);
+  const collapseButton = document.createElement('button');
+  collapseButton.type = 'button';
+  collapseButton.className = 'sidebar__collapse';
+  collapseButton.setAttribute('aria-controls', 'site-sidebar');
+  collapseButton.setAttribute('aria-expanded', String(!options.collapsed));
+  collapseButton.setAttribute(
+    'aria-label',
+    options.collapsed ? 'Espandi barra di navigazione' : 'Riduci barra di navigazione',
+  );
+  collapseButton.title = options.collapsed
+    ? 'Espandi barra di navigazione'
+    : 'Riduci barra di navigazione';
+  collapseButton.textContent = options.collapsed ? '›' : '‹';
+  collapseButton.addEventListener('click', options.onToggle);
+
+  footer.append(version, collapseButton);
   sidebar.append(brand, scroll, footer);
   return sidebar;
 }

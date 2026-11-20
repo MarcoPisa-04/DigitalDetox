@@ -1,0 +1,67 @@
+.experience-page {
+  display: grid;
+  gap: var(--space-6);
+  min-height: calc(100vh - var(--page-padding-block) * 2);
+  padding-block: var(--space-6);
+}
+
+.experience__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.experience__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: var(--space-3);
+  min-height: 190px;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.experience__check {
+  position: absolute;
+  opacity: 0;
+}
+
+.experience__checkmark {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 6px;
+}
+
+.experience__check:checked + .experience__checkmark {
+  border-color: var(--color-success);
+  background:
+    linear-gradient(135deg, transparent 46%, #ffffff 46%, #ffffff 54%, transparent 54%)
+    var(--color-success);
+}
+
+.experience__copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.experience__title {
+  font-size: 1.05rem;
+}
+
+.experience__text {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.experience__progress {
+  color: var(--color-accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

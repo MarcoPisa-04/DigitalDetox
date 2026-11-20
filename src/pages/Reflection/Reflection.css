@@ -1,0 +1,47 @@
+.reflection-page {
+  display: grid;
+  gap: var(--space-6);
+  min-height: calc(100vh - var(--page-padding-block) * 2);
+  padding-block: var(--space-6);
+}
+
+.reflection__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.reflection__card {
+  display: grid;
+  gap: var(--space-3);
+  min-height: 280px;
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.reflection__label {
+  color: var(--color-accent-purple);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.reflection__prompt {
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+.reflection__answer {
+  width: 100%;
+  resize: vertical;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
